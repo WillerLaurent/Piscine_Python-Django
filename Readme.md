@@ -13,7 +13,7 @@ source env/bin/activate
 pip install django
 ```
 
-## Instalation des bibliothèques avec fichier requirement.txt
+## Installation des bibliothèques avec fichier requirement.txt
 
 ```shell
 pip install -r requirement.txt
