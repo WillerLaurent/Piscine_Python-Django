@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Publications</title>
+    <style>
+    table,
+td {
+    border: 1px solid #333;
+    border-collapse : collapse;
+    padding: 5px 5px 5px 5px;
+}
+.tab_title{
+font-weight: bold;
+text-align: center;
+}
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+{% include "nav.html" %}
+<a href="new_publish">Créer un nouvel article</a>
+<hr>
+
+<table>
+    <thead>
+    <tr>
+        <th colspan="3">Articles publiés:</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="tab_title">
+        <td >Titre</td>
+        <td >Synopsis</td>
+        <td >Date de création</td>
+    </tr>
+    {% for article in object_list %}
+        {% if article.author == user %}
+    <tr>
+        <td ><a href="details/{{ article.id }}">{{ article.title }}</a></td>
+        <td >{{ article.synopsis }}</td>
+        <td > {{ article.created }}</td>
+    </tr>
+        {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

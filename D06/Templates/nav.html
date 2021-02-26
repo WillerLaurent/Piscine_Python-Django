@@ -1,0 +1,16 @@
+<nav>
+
+    {% if user.is_authenticated %}
+    <b>Hello {{ user }}</b>
+    <div>
+        <a href="/deconnexion">Déconnexion</a><hr>
+    </div>
+    <h3>Ajouter un tip :</h3>
+    {% include "tipform.html" %}
+    <hr>
+    {% else %}
+    <a href="/inscription">Inscription</a>
+    <a href="/connexion">Connexion</a>
+    <b>Hello {{ user1 }}</b>
+    {% endif %}
+</nav>

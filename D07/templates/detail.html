@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails</title>
+</head>
+<body>
+{% include "nav.html" %}
+<h1>Article détaillé :</h1>
+<h2>{{ article.title }}</h2>
+<h3>{{ article.synopsis }}</h3>
+<hr>
+<p>{{ article.content }}</p>
+<hr>
+<p>posté le : {{ article.created }}</p>
+<p>Auteur : {{ article.author }}</p>
+
+
+</body>
+</html>

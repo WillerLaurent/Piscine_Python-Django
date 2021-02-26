@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nouvel article</title>
+</head>
+<body>
+{% include "nav.html" %}
+<h2>Créer un nouvel article :</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Enregistrer">
+</form>
+</body>
+</html>

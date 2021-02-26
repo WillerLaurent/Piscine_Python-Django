@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <style>
+        table,
+td {
+    border: 1px solid #333;
+    border-collapse : collapse
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+div{
+    padding: 20px 0px 20px 0px
+}
+body{
+    padding: 20px 0px 20px 0px
+}
+
+    </style>
+
+</head>
+<body>
+
+{% include "nav.html" %}
+<div>
+
+</div>
+<table>
+    <thead>
+    <tr>
+        <th colspan="3">Les tips déjà postés</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="font-weight: bold">Auteur</td>
+        <td style="font-weight: bold">Contenu</td>
+        <td style="font-weight: bold">Date</td>
+    </tr>
+    {% for t in tips %}
+    <tr>
+        <td>{{ t.auteur }}</td>
+        <td>{{ t.contenu }}</td>
+        <td> {{ t.date }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
