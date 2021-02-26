@@ -1,13 +1,13 @@
 # Piscine Python-Django de l'école 42
 
-## Installation de l'environement virtuel python
+## Installation de l'environnement virtuel python
 
 ```shell
 python3 -m venv env
 
 source env/bin/activate
 ```
-## Installation de Djabngo dans l'environnemet virtuel
+## Installation de Django dans l'environnement virtuel
 
 ```shell
 pip install django
