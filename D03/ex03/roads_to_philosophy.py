@@ -33,13 +33,14 @@ def check_a_tag(text):
     print('close: ', close_par)
     print('start_a: ', start_a_tag)
     if start_a_tag >= 0:
+        if (start_a_tag > open_par) and (start_a_tag < close_par):
+            print('elif')
+            return check_a_tag(text[close_par + 1:]) # mettre return permet de recuperer la variable a la sortie
         if (start_a_tag < open_par) or (start_a_tag > close_par):
-            title_a_tag = find_title_a_tag(text)
+            title_a_tag = find_title_a_tag(text[start_a_tag:])
             print('title_a_tag', title_a_tag)
             return title_a_tag
-        if (start_a_tag > open_par) and (start_a_tag < close_par):
-            check_a_tag(text[close_par + 1:])
-    if start_a_tag < 0:
+    elif start_a_tag < 0:
         return -1
 
 
@@ -87,14 +88,15 @@ def roads_to_philosophy(arg):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print("1 argument est demandé")
-        exit(0)
-    elif len(sys.argv) > 2:
-        print("1 seul argument est attendu")
-        exit(0)
-    else:
-        roads_to_philosophy(sys.argv[1])
+    # if len(sys.argv) < 2:
+    #     print("1 argument est demandé")
+    #     exit(0)
+    # elif len(sys.argv) > 2:
+    #     print("1 seul argument est attendu")
+    #     exit(0)
+    # else:
+    #     roads_to_philosophy(sys.argv[1])
+    roads_to_philosophy('mathematics')
 
 
 
